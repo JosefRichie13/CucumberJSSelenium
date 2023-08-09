@@ -1,6 +1,6 @@
 const {Given, When, Then} = require('@cucumber/cucumber');
 const {assert, expect} = require('chai')
-const {By} = require('selenium-webdriver')
+const {By, until} = require('selenium-webdriver')
 const configs = require('../support/configs.js')
 const selectors = require('../support/selectors.js')
 const HelperMethods = require('../support/methods.js')
@@ -61,6 +61,8 @@ Then('I should see the login error message {string}', async function(Message){
 Then('I logout of the webpage', async function(){
     await this.driver.findElement(By.id(selectors.Menu)).click()
     // Sleeps for 2 seconds
-    await new Promise(r => setTimeout(() => r(), 2000))
+    //await new Promise(r => setTimeout(() => r(), 10000))
+    //Explicit Wait for 10 seconds, but won't wait for 10 secs if the element is found
+    await this.driver.manage().setTimeouts( { implicit: 10000 } );
     await this.driver.findElement(By.id(selectors.LogoutButton)).click()
 })
