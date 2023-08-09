@@ -1,0 +1,16 @@
+{
+  "name": "cucumberjsselenium",
+  "version": "1.0.0",
+  "description": "UI Automation using Cucumber.js, Selenium and JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joseph Richie",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.3.0",
+    "chai": "^4.3.7",
+    "selenium-webdriver": "^4.11.1"
+  }
+}
