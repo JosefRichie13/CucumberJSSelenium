@@ -9,7 +9,7 @@ class selectors {
     static LogoutButton = "logout_sidebar_link"
     static LoginPageTitle = "login_logo"
     static ProductList = "inventory_item_name"
-    static AddToCart = "btn.btn_primary.btn_small.btn_inventory"
+    static AddToCart = "button[data-test]"
     static Cart = "shopping_cart_link"
     static Checkout = "checkout"
     static FirstName = "first-name"
