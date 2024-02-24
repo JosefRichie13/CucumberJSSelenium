@@ -1,14 +1,3 @@
-const {assert, expect} = require('chai')
-
-exports.ElementNotVisible = async function(Element){
-    try {
-        assert.equal(await this.driver.findElement(By.id(Element)).isDisplayed(), true)
-    }
-    catch {
-        return false  
-    }
-}
-
 // This function will accept a bunch of elements (Names), then puts them into a list and returns it
 
 exports.NamesFromList = async function(Names){
@@ -23,3 +12,7 @@ exports.NamesFromList = async function(Names){
     
         return RawNames    
     }
+
+exports.WaitForFewSeconds = async function(TimeToWait){
+    await new Promise(r => setTimeout(() => r(), TimeToWait))
+}    
