@@ -68,8 +68,8 @@ class DriverMethods{
     }
 
     // Checks if an element is present in the DOM or not
-    // If yes, it returns TRUE
-    // If no, it returns FALSE
+    // Returns TRUE if element is NOT visible, which means the size will be 0
+    // Returns FALSE if element is visible, which means the size will be greater than 0
     async ElementVisibleOrNot(driver, element){
         const status = await driver.findElements(By.id(element))
         if (Object.keys(status).length == 0){
