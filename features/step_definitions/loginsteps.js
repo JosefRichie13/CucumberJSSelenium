@@ -42,12 +42,12 @@ When('I login as a {string} user', async function(UserType){
 Then('I should see {string} in the {string}', async function(Message, Page){
     switch(Page){
         case "homepage":
-            assert.equal(await DriverMethods.GetTextFromElement("classname", selectors.HomePageTitle), Message)
-            assert.equal(await DriverMethods.ElementVisibleOrNot(selectors.LoginButton), true)
+            assert.equal(await DriverMethods.GetTextFromElement("className", selectors.HomePageTitle), Message)
+            assert.equal(await DriverMethods.ElementVisibleOrNot("id", selectors.LoginButton), true)
             break;
         case "loginpage":
-            assert.equal(await DriverMethods.GetTextFromElement("classname", selectors.LoginPageTitle), Message)
-            assert.equal(await DriverMethods.ElementVisibleOrNot(selectors.LoginButton), false)
+            assert.equal(await DriverMethods.GetTextFromElement("className", selectors.LoginPageTitle), Message)
+            assert.equal(await DriverMethods.ElementVisibleOrNot("id", selectors.LoginButton), false)
             break
         default : 
             console.log("Incorrect page")    

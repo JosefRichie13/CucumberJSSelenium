@@ -5,7 +5,7 @@ const HelperMethods = require('../support/methods.js')
 const DriverMethods = require('../support/driver.js')
 
 When('I add {string} to the cart', async function(Product){
-    Names = await DriverMethods.GetListOfElements("classname", selectors.ProductList)
+    Names = await DriverMethods.GetListOfElements("className", selectors.ProductList)
     NamesFromUI = await HelperMethods.NamesFromList(Names)
 
     Index = NamesFromUI.indexOf(Product)
@@ -15,7 +15,7 @@ When('I add {string} to the cart', async function(Product){
 })
 
 When('I click on the cart', async function(){
-    await DriverMethods.ClickButton("classname", selectors.Cart)
+    await DriverMethods.ClickButton("className", selectors.Cart)
 })
 
 When('I checkout', async function(){
@@ -38,5 +38,5 @@ When('I confirm my order', async function(){
 })
 
 Then('I should see {string} after the order is placed', async function(Message){
-    assert.equal(await DriverMethods.GetTextFromElement("classname", selectors.CheckoutBanner), Message)
+    assert.equal(await DriverMethods.GetTextFromElement("className", selectors.CheckoutBanner), Message)
 })
