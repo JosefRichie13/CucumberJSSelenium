@@ -27,6 +27,16 @@ class DriverMethods{
         await select.selectByVisibleText(selectOptionInText)
     }
 
+    async GetTheCurrentURL(){
+        return browser.getCurrentUrl()
+    }
+
+    async SwitchBetweenTabs(tabNumber){
+        //handleID = browser.getWindowHandle(tabNumber)
+        var windows = await browser.getAllWindowHandles()
+        await browser.switchTo().window(windows[tabNumber])
+    }
+
 
     async GetTextFromListOfElements(locator, element){
         const listOfElements = await browser.findElements(By[locator](element))

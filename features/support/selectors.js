@@ -31,9 +31,9 @@ class selectors {
     static TaxCalculated = "summary_tax_label"
     static FullTotal = "div[class*=summary_total_label]"
     static Footer = "footer"
-    static Footer_Twitter = "social_twitter a"
-    static Footer_FB = "social_facebook a"
-    static Footer_Linkedin = "social_linkedin a"
+    static Footer_Twitter = "social_twitter"
+    static Footer_FB = "social_facebook"
+    static Footer_Linkedin = "social_linkedin"
 
 }
 
