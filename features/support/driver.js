@@ -22,8 +22,15 @@ class DriverMethods{
     }
 
 
-    async GetListOfElements(locator, element){
-        return await browser.findElements(By[locator](element))
+    async GetTextFromListOfElements(locator, element){
+        const listOfElements = await browser.findElements(By[locator](element))
+        const listOfText = []
+        let i = 0
+        while (i < listOfElements.length){
+            listOfText.push(await listOfElements[i].getText())
+            i ++
+        }
+        return listOfText
     }
 
 
