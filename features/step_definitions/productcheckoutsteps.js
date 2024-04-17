@@ -85,6 +85,12 @@ Then('I should see the tax calculated at 8 percent', async function() {
 
 })
 
+/*
+We get the individual prices into an array, individualPrices
+We remove the $ sign, convert the array elements into float and sum it. Storing it in a variable, sumCalculatedByCODE
+We get the total displayed in the UI, extract the number, convert into float and store it in a variable, sumCalculatedByAPP
+Then we check if sumCalculatedByCODE and sumCalculatedByAPP are equal
+*/
 Then('I should see the individual items total correctly', async function() {
     individualPrices = await DriverMethods.GetTextFromListOfElements("className", selectors.PriceList)
     individualPricesInFloatWithoutSign = individualPrices.map(price => parseFloat(price.substring(1)));

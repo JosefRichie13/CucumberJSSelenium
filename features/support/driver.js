@@ -1,4 +1,4 @@
-const {By} = require('selenium-webdriver')
+const {By, Select} = require('selenium-webdriver')
 
 class DriverMethods{
     constructor(){
@@ -19,6 +19,12 @@ class DriverMethods{
 
     async GetTextFromElement(locator, element){
         return await browser.findElement(By[locator](element)).getText()
+    }
+
+    async SelectFromDropdownUsingText(locator, element, selectOptionInText){
+        const selectElement = await browser.findElement(By[locator](element))
+        const select = new Select(selectElement)
+        await select.selectByVisibleText(selectOptionInText)
     }
 
 
